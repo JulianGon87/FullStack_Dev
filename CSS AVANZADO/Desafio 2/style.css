@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-areas:
+        "nav"
+        "filters"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
+}
+
+.nav-menu {
+    grid-area: nav;
+    background-color: #004c8f;
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-brand span:first-child {
+    font-size: 24px;
+}
+
+.nav-links {
+    display: none;
+}
+
+.mobile-icon {
+    display: flex;
+    font-size: 24px;
+}
+
+.filters-bar {
+    grid-area: filters;
+    background-color: #d6d6d6;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.filter-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-controls select {
+    width: 250px;
+    padding: 6px;
+    border: 1px solid #999;
+}
+
+.content-area {
+    grid-area: main;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.products-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+.card {
+    border: 1px solid #ccc;
+    width: 280px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img img {
+    max-width: 100%;
+}
+
+.card-body {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.card-body p {
+    margin-bottom: 1rem;
+}
+
+.card-body button {
+    background-color: #005a9c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    gap: 10px;
+}
+
+.pagination span {
+    border: 1px solid #ddd;
+    padding: 6px 14px;
+    color: #005a9c;
+}
+
+.pagination .active {
+    background-color: #eee;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #002b5c;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.social-circle {
+    width: 32px;
+    height: 32px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+@media (min-width: 577px) {
+    .grid-layout {
+        grid-template-areas:
+            "nav filters"
+            "nav main";
+        grid-template-columns: 220px 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .nav-menu {
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 4rem 2rem;
+        position: sticky;
+        top: 0;
+    }
+
+    .nav-brand {
+        margin-bottom: 3rem;
+    }
+
+    .nav-actions .mobile-icon {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+    }
+
+    .footer {
+        grid-area: nav;
+        background-color: transparent;
+        margin-top: auto;
+        width: 100%;
+        padding-bottom: 2rem;
+    }
+
+    .filters-bar {
+        justify-content: flex-start;
+        padding: 0.8rem 2.5rem;
+        background-color: #f1f1f1;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .filter-controls {
+        flex-direction: row;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .filter-controls select {
+        width: 350px;
+    }
+
+    .products-list {
+        justify-content: flex-start;
+        padding-left: 1.5rem;
+    }
+}
